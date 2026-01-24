@@ -5,15 +5,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.auth.dto.Userinfo;
+import com.api.auth.dto.Userinforequest;
 import com.api.auth.repository.DataBaseConnection;
 
 @RestController
-public class MyController {
+public class SignupController {
 
 	DataBaseConnection db=new DataBaseConnection();
     @PostMapping("/signup")
-    public Userinfo signup(@RequestBody Userinfo user) throws ClassNotFoundException, SQLException {
+    public Userinforequest signup(@RequestBody Userinforequest user) throws ClassNotFoundException, SQLException {
           
     	db.saveUser(user);
            return user;
