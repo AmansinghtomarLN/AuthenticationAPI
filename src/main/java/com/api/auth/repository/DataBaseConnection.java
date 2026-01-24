@@ -3,12 +3,12 @@ package com.api.auth.repository;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import com.api.auth.dto.Userinfo;
+import com.api.auth.dto.Userinforequest;
 
 public class DataBaseConnection {
 	
 	
-	 public void saveUser(Userinfo user) {
+	 public void saveUser(Userinforequest user) {
 	
 	try {
 	Class.forName("com.mysql.cj.jdbc.Driver");

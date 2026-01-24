@@ -1,6 +1,6 @@
 package com.api.auth.dto;
 
-public class Userinfo 
+public class Userinforequest 
   {
 	private String email;
     private String password;
@@ -12,12 +12,12 @@ public class Userinfo
     private Long mobileno;
     private String country;
     
-    public Userinfo() {
+    public Userinforequest() {
     	
     }
 
  
-    public Userinfo(String email, String password, String firstName, String lastName, String gender, String dob,
+    public Userinforequest(String email, String password, String firstName, String lastName, String gender, String dob,
 			int age, long mobileno, String country) {
 		super();
 		this.email = email;
