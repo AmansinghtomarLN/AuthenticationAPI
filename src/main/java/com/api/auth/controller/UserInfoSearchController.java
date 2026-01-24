@@ -11,7 +11,7 @@ import com.api.auth.dto.UserInfoDTO;
 import com.api.auth.service.UserInfoService;
 
 @RestController
-public class controller_1 {
+public class UserInfoSearchController {
 	
 	@Autowired
 	UserInfoService service;
