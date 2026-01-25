@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserLogin {
 	@GetMapping("/userdetails/{email}/{password}")
 	public String checkUser(@PathVariable  String email , @PathVariable  String password) throws ClassNotFoundException, SQLException{
-		
+		        boolean result = emailValidation(email) ;
+		     if(result) {
 		
 		 Class.forName("com.mysql.cj.jdbc.Driver");
     	 Connection connection =DriverManager.getConnection("jdbc:mysql://localhost:3306/authenticationapidb", "root", "root");
@@ -32,8 +33,20 @@ public class UserLogin {
     		return"Welcome you are login successfully";
     	}else {
     		return"Please enter your valid email and password";
-    	}
-	      
+    	   }
+	   }else {
+			 return "Please Enter Your Correct email";
+	   }
 	}
 
-}
+	public  boolean emailValidation(String email) {
+		
+		EmailValidation ev= new EmailValidation();
+		  return  ev.checkEmail(email);
+		  
+		
+		
+     	}
+	}
+ 
+
