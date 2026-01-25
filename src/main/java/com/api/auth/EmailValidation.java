@@ -19,10 +19,28 @@ public class EmailValidation {
    public boolean countOfCharacterInEmail(String email) {
 	   int countOfA = 0;
 	   
+	   for(int i=0; i<email.length(); i++) {
+		  char c=email.charAt(i);
+		  if(c=='@') {
+			  countOfA++;
+		  }
+	   }
+	   if(countOfA==1) {
+		   return true;
+	   }
 	   
-	   //
+	   return false;
+   }
+   
+   public boolean countOfCharacterInEmailCom(String email) {
+	   int countOfA = 0;
 	   
-	   
+	   for(int i=0; i<email.length(); i++) {
+		  char c=email.charAt(i);
+		  if(""==".com") {
+			  countOfA++;
+		  }
+	   }
 	   if(countOfA==1) {
 		   return true;
 	   }
