@@ -88,8 +88,12 @@ public class UserLogin {
     	
     	 
     	int rs=ps. executeUpdate();
-    	 
-    	return  "This is your updated entry";
+    	
+    	if(rs==1) {
+    		return "This is your updated entry";
+    	}else {
+    		return "Something wrong with your code";
+    	}
 		 }else {
 			 return "Please Enter Your Valid Email ";
 		 }
