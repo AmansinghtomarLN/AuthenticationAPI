@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -69,6 +71,30 @@ public class UserLogin {
 			 return "Please Enter Your Valid Email and Password";
 		 }
     	
+	   }
+	   
+	@PutMapping("/{email}")
+	public String put(@RequestBody  UserInfoForUpdate user,@PathVariable String email) throws ClassNotFoundException, SQLException {
+		 if(emailValidation(email)) {
+		 Class.forName("com.mysql.cj.jdbc.Driver");
+    	 Connection connection =DriverManager.getConnection("jdbc:mysql://localhost:3306/authenticationapidb", "root", "root");
+    	 
+    	 String query="Update  userInfo SET FirstName=? , LastName=? , Age=? where emailId=?";
+    	 PreparedStatement ps=connection.prepareStatement(query);
+    	 ps.setString(1,user.getFname());
+    	 ps.setString(2,user.getLname());
+    	 ps.setInt(3,user.getAge() );
+    	 ps.setString(4,email);
+    	
+    	 
+    	int rs=ps. executeUpdate();
+    	 
+    	return  "This is your updated entry";
+		 }else {
+			 return "Please Enter Your Valid Email ";
+		 }
+	
+		 
 	   }
 	}
  
