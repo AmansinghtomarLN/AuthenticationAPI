@@ -9,7 +9,7 @@ public class Userinforequest
     private String gender;
     private String dob;
     private Integer age;
-    private Long mobileno;
+    private long mobileno;
     private String country;
     
     public Userinforequest() {
@@ -102,12 +102,12 @@ public class Userinforequest
 	}
 
 
-	public Long getMobileno() {
+	public long getMobileno() {
 		return mobileno;
 	}
 
 
-	public void setMobileno(Long mobileno) {
+	public void setMobileno(long mobileno) {
 		this.mobileno = mobileno;
 	}
 
